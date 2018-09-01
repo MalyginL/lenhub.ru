@@ -1,5 +1,6 @@
 import {Component, OnInit, AfterViewChecked} from '@angular/core';
 
+import {NgbModal,NgbModalRef, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 @Component({
     selector: 'login-page',
     templateUrl: './login-page.component.html',
@@ -8,6 +9,18 @@ import {Component, OnInit, AfterViewChecked} from '@angular/core';
   export class LoginPageComponent implements OnInit,AfterViewChecked {
 isLoading:boolean=true;
 
+constructor(private modalService: NgbModal) {}
+
+private modalRef: NgbModalRef;
+
+openModal(content) {
+  this.modalRef = this.modalService.open(content,{size:"sm"});
+}
+
+
+
+
+
     ngOnInit(): void {
       this.isLoading = true;
     }
@@ -15,7 +28,4 @@ isLoading:boolean=true;
     ngAfterViewChecked() : void {
       this.isLoading = false;
   }
-
-constructor(){
-}
   }
