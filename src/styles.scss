@@ -1,0 +1,51 @@
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
+  }
+  @keyframes modal-b-fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+@keyframes modal-fade {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.modal-backdrop {
+    opacity: 0.5;
+    animation: ease-in-out .5s modal-b-fade;
+    transition: all .5s ease-in-out;
+}
+
+.modal {
+    top: -100px;
+    animation: ease-in-out .5s modal-fade;
+    transition: all .5s ease-in-out;
+
+    &.show {
+        top: 0;
+    }
+}
+
+@font-face {
+    font-family: 'CIND';
+    src: url('assets/fonts/CIND.otf') format('CIND');
+  }
+
+

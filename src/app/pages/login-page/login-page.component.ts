@@ -1,12 +1,21 @@
 import {Component, OnInit, AfterViewChecked} from '@angular/core';
 
 import {NgbModal,NgbModalRef, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import{
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
 @Component({
     selector: 'login-page',
     templateUrl: './login-page.component.html',
-    styleUrls: ['./login-page.component.scss']
+    styleUrls: ['./login-page.component.scss'],
   })
-  export class LoginPageComponent implements OnInit,AfterViewChecked {
+
+export class LoginPageComponent implements OnInit,AfterViewChecked {
 isLoading:boolean=true;
 
 constructor(private modalService: NgbModal) {}
@@ -14,8 +23,10 @@ constructor(private modalService: NgbModal) {}
 private modalRef: NgbModalRef;
 
 openModal(content) {
+
   this.modalRef = this.modalService.open(content,{size:"sm"});
 }
+
 
 
 

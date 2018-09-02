@@ -26,10 +26,11 @@ $color_jagged_ice_approx: #bfe8df;
 $color_jungle_green_approx: #3aa18c;
 
 //fonts
-$font_0: Pacifico;
-$font_1: cursive;
-$font_2: Source Sans Pro;
-$font_3: sans-serif;
+$font_0: 'Nova Square';
+$font_1: 'Nova Square';
+$font_2: 'Nova Square';
+$font_3: cursive;
+
 
 
 .main {
@@ -1388,11 +1389,10 @@ fieldset[disabled] .btn-primary {
 	stroke-dashoffset: 300;
 	-webkit-animation: dash 3s .3s linear forwards;
 	animation: dash 3s .3s linear forwards;
-	-webkit-animation: dash 3s .8s linear forwards;
-	animation: dash 3s .8s linear forwards;
   }
   
   input {
+	text-align: center; 
 	color:white;
 	left: 40px;
 	position: absolute;
@@ -1404,17 +1404,17 @@ fieldset[disabled] .btn-primary {
 	&:focus {
 	  outline: none;
 	}
+	font-family:$font_2,$font_3;
+	&::-webkit-input-placeholder, &::-moz-placeholder {
+	  color: rgba(255, 255, 255, 0.4);
+	}
   }
   
   button:focus {
 	outline: none;
   }
   
-  input {
-	&::-webkit-input-placeholder, &::-moz-placeholder {
-	  color: rgba(255, 255, 255, 0.4);
-	}
-  }
+ 
   
   .call-to-action {
 	margin: 22px 0;
@@ -1424,7 +1424,7 @@ fieldset[disabled] .btn-primary {
   }
   
   button {
-	 
+	font-family: $font_2, $font_3;
 	display: block;
 	width: 240px;
 	height: 40px;
@@ -1477,3 +1477,4 @@ fieldset[disabled] .btn-primary {
 	}
   }
 
+ 
