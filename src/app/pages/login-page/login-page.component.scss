@@ -681,11 +681,14 @@ $font_3: cursive;
 		}
 	}
 }
+.stat{
+	color: #1a8829
+}
 body {
 	font-family: $font_2, $font_3;
 	font-size: 14px;
 	line-height: 1.42857143;
-	color: $color_fuscous_gray_approx;
+	color: "$color_fuscous_gray_approx";
 	background-color: $white;
 }
 a {
@@ -1133,6 +1136,7 @@ h6 {
 	line-height: 1.2;
 	color: $white;
 }
+
 
 
 .h6 {

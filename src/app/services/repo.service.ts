@@ -9,7 +9,31 @@ export class RepoService {
     /*AUTH*/ 
   access_token: any;
   refresh_token: any;
+/** APP STAT */
+    javaVendor: String;
+    javaVersion: String;
+    pid: Number;
+    uptime: Number;
+
+    heapInit: Number;
+    heapMax: Number;
+    heapUsed: Number;
+    heapCommited:Number;
+
+    nonHeapInit: Number;
+    nonHeapCommited:Number;
+    nonHeapUsed:Number;
+    nonHeapMax: Number;
+
+    threadCount: Number;
+    daemons:Number;
+
+    /** CACHE STAT */
  
+averageLoadPenalty: Number;
+hitRate: Number;
+evictionCount: Number;
+estimatedSize: Number;
 
   constructor() {
     this.access_token = localStorage.getItem('access_token');

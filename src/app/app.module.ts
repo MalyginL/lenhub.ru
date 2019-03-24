@@ -13,14 +13,19 @@ import {OauthService} from './services/oauth.service';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RepoService } from './services/repo.service';
+import { LoadService } from './services/load.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SizePipe } from './services/sizePipe';
 
 @NgModule({
   declarations: [
+    SizePipe,
     AppComponent,
     LoginPageComponent,
     
   ],
   imports: [
+    HttpClientModule,
     NgbModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -30,7 +35,7 @@ import { RepoService } from './services/repo.service';
     }),
     AppRoutingModule,
   ],
-  providers: [OauthService, AuthGuard,RepoService],
+  providers: [OauthService, AuthGuard,RepoService,LoadService],
   bootstrap: [AppComponent],
   entryComponents: [  ]
 })

@@ -16,6 +16,12 @@
     }
 }
 
+@media (min-width: 600px){
+.modal-sm {
+    max-width: 60%;
+}
+}
+
 @keyframes modal-fade {
     from {
         top: -100px;
