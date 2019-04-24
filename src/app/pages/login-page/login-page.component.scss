@@ -1398,7 +1398,7 @@ fieldset[disabled] .btn-primary {
   
   input {
 	text-align: center; 
-	color:white;
+	color:#1a8829;
 	
 	position: absolute;
 	width: 180px;
@@ -1406,7 +1406,7 @@ fieldset[disabled] .btn-primary {
 	margin: 5px 0;
 	background: transparent;
 	border: none;
-	box-shadow: 0 0 3px white;
+	box-shadow:  1px 1px 2px black, 0 0 1em red;
 	&:focus {
 	  outline: none;
 	}
@@ -1437,11 +1437,11 @@ fieldset[disabled] .btn-primary {
 	padding: 0;
 	
 	
-	color: #fff;
-	background-color: rgba(255, 255, 255, 0);;
+	color:#1a8829;
+	background-color: rgba(255, 255, 255, 0);
 	border-width: 0;
 	-webkit-box-shadow: 0 0 10px #fff;
-        box-shadow: 0 0 10px #fff;
+        box-shadow: 1px 1px 2px black, 0 0 1em red;
 
 	transition: background-color .10s ease-in-out;
 	-webkit-user-select: none;
