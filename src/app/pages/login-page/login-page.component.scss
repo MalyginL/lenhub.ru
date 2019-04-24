@@ -682,6 +682,7 @@ $font_3: cursive;
 	}
 }
 .stat{
+	text-shadow: 1px 1px 2px black, 0 0 1em red;
 	color: #1a8829
 }
 body {
@@ -1398,13 +1399,14 @@ fieldset[disabled] .btn-primary {
   input {
 	text-align: center; 
 	color:white;
-	left: 40px;
+	
 	position: absolute;
-	width: 195px;
-	height: 30px;
+	width: 180px;
+	height: 40px;
 	margin: 5px 0;
 	background: transparent;
 	border: none;
+	box-shadow: 0 0 3px white;
 	&:focus {
 	  outline: none;
 	}
@@ -1430,17 +1432,17 @@ fieldset[disabled] .btn-primary {
   button {
 	font-family: $font_2, $font_3;
 	display: block;
-	width: 240px;
+	width: 180px;
 	height: 40px;
 	padding: 0;
-	margin: 10px 20px 10px;
-	font-weight: 700;
+	
+	
 	color: #fff;
 	background-color: rgba(255, 255, 255, 0);;
 	border-width: 0;
 	-webkit-box-shadow: 0 0 10px #fff;
         box-shadow: 0 0 10px #fff;
-	border-radius: 20px;
+
 	transition: background-color .10s ease-in-out;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -1448,7 +1450,7 @@ fieldset[disabled] .btn-primary {
 	user-select: none;
   }
   button:active { 
-    background-color: yellow;
+    background-color: white;
 }
   
   p {

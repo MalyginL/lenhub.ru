@@ -12,6 +12,9 @@ import { HttpBackend } from '@angular/common/http';
 import { LoadService } from 'src/app/services/load.service';
 import { RepoService } from 'src/app/services/repo.service';
 import { SizePipe } from 'src/app/services/sizePipe';
+import { topics } from 'src/app/model/topics';
+import { FormControl } from '@angular/forms';
+import { messageModel } from 'src/app/model/messagemodel';
 
 @Component({
     selector: 'login-page',
@@ -22,16 +25,21 @@ import { SizePipe } from 'src/app/services/sizePipe';
 
 export class LoginPageComponent implements OnInit,AfterViewChecked {
 isLoading:boolean=true;
+name = new FormControl('');
+
+
+constructor(private modalService: NgbModal,private loadService: LoadService, private repo:RepoService) {
+  
+}
 
 
 
+loadHistory(id:Number){
+  return this.loadService.loadMessages(id)
+}
 
 
-
-
-
-constructor(private modalService: NgbModal,private loadService: LoadService, private repo:RepoService) {}
-
+get messages():Array<messageModel>{return this.repo.messages}
 get javaVendor():String { return this.repo.javaVendor};
 get javaVersion():String { return this.repo.javaVersion};
 get pid():Number { return this.repo.pid};
@@ -54,8 +62,9 @@ get hitRate():Number {  return this.repo.hitRate };
 get evictionCount():Number {  return this.repo.evictionCount };
 get estimatedSize():Number {  return this.repo.estimatedSize };
 
+get currentTopic():Array<topics>{return this.repo.currentTopics}
 
-
+get pairs():Map<Number,Number>{return this.repo.pairs}
 
 private modalRef: NgbModalRef;
 
@@ -83,13 +92,17 @@ getFormathours(input) {
   result += minutes+' min';
   return result;
 }
-
+ truncate(){
+  this.loadService.truncate()
+  }
 
 update(){
   setInterval(() => {
     this.loadService.loadAppStat();
     this.loadService.loadCacheStat();
-  }, 60000);
+    this.loadService.loadQuestions()
+    this.loadService.loadPairs()
+  }, 10000);
 }
 
 
@@ -97,10 +110,14 @@ update(){
       this.isLoading = true;
       this.loadService.loadAppStat();
       this.loadService.loadCacheStat();
+      this.loadService.loadQuestions()
+      this.loadService.loadPairs()
       this.update()
     }
 
     ngAfterViewChecked() : void {
       this.isLoading = false;
   }
+
+ 
   }

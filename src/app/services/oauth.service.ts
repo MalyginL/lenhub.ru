@@ -45,7 +45,7 @@ export class OauthService {
               }
             });
         }
-      }, 5000);
+      }, 60000);
   }
 
   logout() {

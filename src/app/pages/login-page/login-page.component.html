@@ -6,11 +6,32 @@
       <video id='video-background' *ngIf="true" autoplay loop  muted onloadedmetadata="this.muted = true">
                  <source src='../../../assets/video/login-background.mp4' type='video/mp4'>
                </video>   
-               <div class = container>
+                <div class = container>
                   <div class="row">
                  <div class="col-md-6">
+                   <br>
                  <h5>Bot Statistic</h5>
+                 <br>
+                 <div class="stat "><button  (click)="truncate()">Truncate Cassandra</button> </div>
+                  <br>
+                 <div class="stat ">Current Topics</div>
+                 <br>
+                 <div class="stat " *ngFor="let topic of currentTopic">{{topic.text}} </div>
+                 <br> 
+                 <div class="stat ">Current Cache Pairs</div>
+                 <br>
+                 <div class="stat " *ngFor="let pair of pairs | keyvalue"> {{pair.key}} ↔ {{pair.value}} </div>
+                 <br>
+                 <input [formControl]="name"> 
+                 <br>
+                 <br>
+                 <br>
+                 <div class="stat "><button  (click)="loadHistory(name.value)">Load</button> </div>
+                 <br>
+                 <div class="stat " *ngFor="let message of messages">{{message.message}} </div>
+
                 </div>
+                
 
                 <div class="col-md-6" style="text-align:right">
                     <h5>Application Statistic</h5>
@@ -36,6 +57,9 @@
                      <div class="stat ">cache hit rate: {{hitRate}}</div>
                      <div class="stat ">cache eviction count: {{evictionCount}}</div>
                      <div class="stat ">cache estimated size: {{estimatedSize}}</div>
+
+                     <br>
+                     <div class="stat "><a href="http://185.235.129.57:1010" target="_blank">Pg admin</a></div>
                    </div>
                    </div>
                </div>

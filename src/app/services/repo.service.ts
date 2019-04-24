@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import { topics } from '../model/topics';
+import { messageModel } from '../model/messagemodel';
 
 
 @Injectable()
@@ -34,9 +36,15 @@ averageLoadPenalty: Number;
 hitRate: Number;
 evictionCount: Number;
 estimatedSize: Number;
-
+messages :Array<messageModel>;
+/** BOT STAT */
+currentTopics : Array<topics>
+pairs : Map<Number,Number>
   constructor() {
     this.access_token = localStorage.getItem('access_token');
     this.refresh_token = localStorage.getItem('refresh_token');
   }
+
+
+
 }
